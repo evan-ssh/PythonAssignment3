@@ -1,5 +1,8 @@
 def main():
+ 
    print("Feet and Meteres Converter")
+   conversionmenu()
+ 
     
 def conversionmenu():
    print("Conversions Menu:")
@@ -10,16 +13,19 @@ def conversionmenu():
       Convertfeet()
    elif select_conversion == "b":
         ConvertMeters()
+  
     
    
 
-
 def Convertfeet():
- meters = float("Enter meters")
- feet = meters / 0.3048
- print(feet)
+   feet = float(input("Enter feet"))
+   meters = feet * 0.3048
+   print(f"{meters:.2f} meters")
+
 
 def ConvertMeters():
-    feet = float("Enter feet")
-    meters = feet * 0.3048
-    print(meters)
+   meters = float(input("Enter meters"))
+   feet = meters / 0.3048
+   print(f"{feet:.2f} feet")
+
+main()
