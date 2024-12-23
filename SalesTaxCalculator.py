@@ -7,15 +7,21 @@ def main():
   print(f"Total: {total_of_items:.2f}")
   print(f"Sales tax: {sales_tax:.2f}")
   print(f"Total After Tax: {total_of_sale:.2f}")
+  go_again = input("Continue (Y/N)").lower()
+  if go_again != "y":
+    return False
 
 def GetItems():
     items = []
     while True:
         print("Enter items(Enter 0 To End)")
-        cost_item = float(input("Enter An Item: "))
-        if cost_item == 0:
-          break
-        items.append(cost_item)
+        try:
+          cost_item = float(input("Enter An Item: "))
+          if cost_item == 0:
+            break
+          items.append(cost_item)
+        except ValueError:
+          print("You Must Enter A Number")
     return items
 
 def GetSalesTax(total_of_items):
