@@ -6,4 +6,7 @@ def main():
             break
         else:
             print("Number is a prime number")
+    for numbers in range(1, number + 1):
+        if (number % numbers ==0):
+            print(f"factors",numbers)
 main()
